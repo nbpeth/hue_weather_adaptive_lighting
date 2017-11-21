@@ -2,7 +2,7 @@ const axios = require('axios');
 const color_profiles = require('./color_profiles.js');
 const config = require('./config.js');
 
-const getHueState = () => {
+const get_hue_state = () => {
 	axios.get(config['hue_url'] + '/groups')
 		.then(response => {
 			console.log(response.data);
@@ -12,8 +12,8 @@ const getHueState = () => {
 		});	
 }
 
-const getWeather = () => {
-	axios.get(config['dark_sky_base_url'] + '37.8267,-122.4233')
+const get_weather = () => {
+	axios.get(config['dark_sky_base_url'] + config['lat_long'])
 		.then(response => {
 			var data = response.data;
 			var current_weather = data['currently'];
@@ -26,7 +26,7 @@ const getWeather = () => {
 		});	
 }
 
-const changeLights = (weather_state) => {
+const set_hue_state = (weather_state) => {
 	axios({
 		method:'put',
 		url: config['hue_url'] + config['hue_user'] + '/groups/1/action',
@@ -38,7 +38,12 @@ const changeLights = (weather_state) => {
 	});	
 }
 
-changeLights('rain');
+const run = () => {
+	// get_weather();
+	set_hue_state('rain');
 
-// getWeather();
+}
+
+run();
+
 
