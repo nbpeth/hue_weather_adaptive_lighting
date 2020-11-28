@@ -12,3 +12,7 @@ Requirements:
 1. [Dark Sky API Key](https://darksky.net/dev/account) 
 2. Phillips Hue Bridge and at least one color-enabled bulb
 3. [Node.js](https://nodejs.org) 
+
+
+# Run
+* $`HUE_URL=$HUE_URL DARK_SKY_KEY=$DARK_SKY_KEY LAT_LONG=$LAT_LONG HUE_USER=$HUE_USER node app.js`
