@@ -30,59 +30,75 @@ const color_profiles = (weather_state) => {
 	}
 }
 
+const random = (ceil=60000) => Math.floor(Math.random() * ceil);
+
 const color_map = (current_condition) => {
+	console.log("currently..", current_condition)
 	return {
 		'clear-day':{
-			'hue':10000,
-			'sat':100,
+			'hue':random(),
+			'sat':random(100),
+			'bri':random(100)
 		}, 
 		'clear-night':{
-			'hue':10000,
+			'hue':random(),
 			'sat':100,
+			'bri':random(100)
 		}, 
 		'rain':{
-			'hue':60000,
+			'hue':random(),
 			'sat':100,
+			'bri':random(100)
 		}, 
 		'snow':{
-			'hue':10000,
+			'hue':random(),
 			'sat':100,
+			'bri':random(100)
 		}, 
 		'sleet':{
-			'hue':10000,
+			'hue':random(),
 			'sat':100,
+			'bri':random(100)
 		},  
 		'wind':{
-			'hue':10000,
+			'hue':random(),
 			'sat':100,
+			'bri':random(100)
 		},  
 		'fog':{
-			'hue':10000,
+			'hue':random(),
 			'sat':100,
+			'bri':random(100)
 		}, 
 		'cloudy':{
-			'hue':10000,
+			'hue':random(),
 			'sat':100,
+			'bri':random(100)
 		}, 
 		'partly-cloudy-day':{
-			'hue':10000,
+			'hue':random(),
 			'sat':100,
+			'bri':random(100)
 		}, 
 		'partly-cloudy-night':{
-			'hue':10000,
+			'hue':random(),
 			'sat':100,
+			'bri':random(100)
 		}, 
 		'hail':{
 			'hue':10000,
 			'sat':100,
+			'bri':random(100)
 		}, 
 		'thunderstorm':{
 			'hue':10000,
 			'sat':100,
+			'bri':random(100)
 		}, 
 		'tornado':{
 			'hue':10000,
 			'sat':100,
+			'bri':random(100)
 		}, 
 	}[current_condition]
 }
