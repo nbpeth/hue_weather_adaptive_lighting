@@ -4,8 +4,8 @@ const vars = {
 	dark_sky_base_url:'https://api.darksky.net/forecast',
 	lat_long:process.env.LAT_LONG,
 	hue_user:process.env.HUE_USER,
-	hue_url:process.env.HUE_URL
-
+	hue_url:process.env.HUE_URL,
+	fetch_interval_seconds: process.env.INTERVAL || 5
 }
 
 module.exports = vars
