@@ -22,23 +22,27 @@ const determine_brightness = (today) => {
 const color_profiles = (weather_state) => {
 	var today = weather_state['daily']['data'][0];
 	var current_condition = weather_state['currently']['icon'];
-
+	console.log("...", color_map(current_condition))
 	return {
 		'hue':color_map(current_condition)['hue'],
-		'bri':determine_brightness(today),
+		'bri':color_map(current_condition)['bri'],
 		'sat':color_map(current_condition)['sat']
 	}
 }
 
-const random = (ceil=60000) => Math.floor(Math.random() * ceil);
+const random = (ceil=65000) => Math.floor(Math.random() * ceil);
 
 const color_map = (current_condition) => {
+	/*
+		bri/sat: 0-255
+		hue: 0-65535
+	*/
 	console.log("currently..", current_condition)
 	return {
 		'clear-day':{
 			'hue':random(),
-			'sat':random(100),
-			'bri':random(100)
+			'sat':random(255),
+			'bri': random(255)
 		}, 
 		'clear-night':{
 			'hue':random(),
